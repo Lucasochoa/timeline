@@ -1,8 +1,6 @@
-class AppDelegate{
-  AppDelegate(){
-    scenes =  new ArrayList<Scene>();
-    buttons = new ArrayList<Buttons>();
+function AppDelegate(){
+  this.Inverted =  False;
+
+  this.draw(){    
   }
-  
-  
 }

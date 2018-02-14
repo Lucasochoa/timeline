@@ -15,7 +15,9 @@ function setup() {
   timeLine = new Timeline(0,2000);
   testEvent = new Event("test",1234);
   scanner = new ScanMarker(30);
-  testEvent.draw();
+
+  
+  //testEvent.draw();
 
 }
 
