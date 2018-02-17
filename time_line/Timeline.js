@@ -6,10 +6,8 @@ function Timeline(eventList,lowerLimit,upperLimit){
 
   this.draw = function(){
 
-
       screenSteps = (this.upperLimit - this.lowerLimit)/5 + 4; //amount of lines 14
       step = windowWidth/screenSteps;
-
       for (var i = 0; i < this.events.length; i++){
         this.events[i].draw(screenSteps,this.lowerLimit,this.upperLimit);
       }
@@ -50,7 +48,8 @@ function returnMinMax(){
 function drawWords(i,lineHeight){
   fill("white");
   strokeWeight(0);
-  yearText = (i-2)*5 + this.lowerLimit;
+  yearText = (i-2)*5 + timeLine.lowerLimit;
+  //print(yearText + " " + this.lowerLimit + " "+ this.upperLimit);
   textX = i * step;
   text(yearText,textX, windowHeight/2-lineHeight - 10);
 }

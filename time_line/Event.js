@@ -25,7 +25,17 @@ function drawTexts(x,y,name){
   text(name + " : Event Name \nlorem ipsum lorem ipsum",0,0);
   pop();
 }
+function drawDottedLine(x1,y1,y2){
+  fill(204, 204, 204);
+  stroke(204, 204, 204);
+  for (var i = y1; i < y2;i+=6){
+    ellipse(x1, i, 1 , 1);
+  }
+  stroke("red");
+  fill("white");
+}
 function drawTrace(x,y){ //update this to a fucking doted line
   strokeWeight(.5);
-  line(x-5,y+10,x-5,windowHeight/2);
+  drawDottedLine(x,y,windowHeight/2 - 30);
+  //line(x,y+10,x,windowHeight/2);
 }

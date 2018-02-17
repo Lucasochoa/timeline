@@ -63,14 +63,17 @@ function updateMinMax(){
   for (var i = 0; i < timeLine.events.length; i++){
     tempDates.push(timeLine.events[i].date);
   }
+  //print(int((min(tempDates) - 10) / 10) * 10);
   timeLine.lowerLimit = int((min(tempDates) - 10) / 10) * 10;
   timeLine.upperLimit = int((max(tempDates) + 10) / 10) * 10;
+  //timeLine.lowerLimit = 5;
+  //print(timeLine.lowerLimit);
 }
 
 function updateText(){
   print(timeLine.events);
   timeLine.events.push(new Event("test1",int(input.value())));
   updateMinMax();
-  print(input.value());
+  //print(input.value());
   input.value("");
 }
