@@ -1,15 +1,17 @@
 function Event(name,date){
   this.name = name;
   this.date = date;
+  this.description = "lorem ipusm lorem ipsum";
   //this.font = font;
 
-  this.draw = function(){
+  this.draw = function(steps,min,max){
+    screenStep = windowWidth/steps;
 
-    var x = 100; //will be based on percent through timeline
+    var x = map(this.date,min,max,screenStep*2,screenStep*(steps-2));
     var y = 200; // will be based on clustering (fucking shit show)
 
     drawTrace(x,y);
-    drawTexts(x,y,this.name);
+    drawTexts(x,y,this.date);
   };
 };
 
