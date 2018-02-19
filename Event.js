@@ -19,18 +19,18 @@ function Event(name,date){
     var y = 200; // will be based on clustering (fucking shit show)
 
     drawTrace(x,y);
-    drawTexts(x,y,this.date);
+    drawTexts(x,y,this.date,this.name);
   };
 };
 
-function drawTexts(x,y,name){
+function drawTexts(x,y,date,name){
   push();
-  translate(x+8,y-2)
-  rotate(-PI / 2.0);
+  translate(x+5,y-2)
+  rotate(PI / 2.0);
   fill("white");
   stroke(0);
   //textFont(this.font);
-  text(name + " : Event Name \nlorem ipsum lorem ipsum",0,0);
+  text(date + name,0,0);
   pop();
 }
 function drawDottedLine(x1,y1,y2){
