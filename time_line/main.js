@@ -69,7 +69,11 @@ function updateMinMax(){
   //timeLine.lowerLimit = 5;
   //print(timeLine.lowerLimit);
 }
-
+function mouseClicked() {
+  for (var i = 0; i < timeLine.events.length; i++){
+    timeLine.events[i].clicked();
+  }
+}
 function updateText(){
   print(timeLine.events);
   timeLine.events.push(new Event("test1",int(input.value())));
