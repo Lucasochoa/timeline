@@ -3,52 +3,50 @@ var input;
 var sampleDates = [];
 var eventList = [];
 var timeLine;
+var arrayOfJsonObjects=[];
 var table;
 
 function preload() {
   myFont = loadFont('assets/GTAmericaMonoRegular.otf');
   textFont(myFont);
-  //table = loadJSON('assets/myTable.json');
-  table = {};
+  table = loadJSON('assets/myTable3.json');
 }
 
 function setup() {
-  //table = new p5.Table();
-  //save(myTable, 'myTable.csv')
   createCanvas(windowWidth, windowHeight);
   background(51);
-  //angleMode(DEGREES);
-
-  //printTable();
-
-  input = createInput();
-  input.position(width - 160 ,30);
-  input.style('border',"none");
-  input.changed(updateText);
-
+  setupInput();
   pos = 25;
 
-  //sampleDates = [1910,1915,1945,1930,1925,1954,1956,1965,1966];
-  //var eventList = createTestEvents(sampleDates);
-
-  //creates sample date arraylist to build min/max
-  for (var i = 0; i < eventList.length; i++){
-    sampleDates.push(eventList[i].date);
-  }
-
-  lowerLimit = int((min(sampleDates) - 10) / 10) * 10;
-  upperLimit = int((max(sampleDates) + 10) / 10) * 10;
-
-  timeLine = new Timeline(eventList,lowerLimit,upperLimit);
+  timeLine = new Timeline(eventList,0,0);
   scanner = new ScanMarker(30);
+
+  setupImportedJSON();
 }
 
 function draw() {
   background(30);
-  //rect(pos, 100, 50, 50); // scrolling test
-
   scanner.draw(windowWidth);
   timeLine.draw(windowWidth,windowHeight);
+}
+
+//sets up the input box
+function setupInput(){
+  input = createInput();
+  input.position(width - 160 ,30);
+  input.style('border',"none");
+  input.changed(updateText);
+}
+
+//adds all events from imported json to timeline and updates it.\
+function setupImportedJSON(){
+  for(var i = 0; i < length(table); i++){
+    print(table[i].name + table[i].value);
+    name = ": "+table[i].name;
+    date = table[i].value;
+    timeLine.events.push(new Event(name,int(date)));
+  }
+  updateMinMax();
 }
 
 function keyPressed() {
@@ -69,10 +67,8 @@ function keyPressed() {
     timeLine.upperLimit -= zoom;
   }
   else if(keyCode ===  OPTION){
-    print("working from shift");
+    print("Saving Session");
     addRowsFromTimeline();
-    //table.addRow(new p5.TableRow(["1920,apple"],[","]));
-    //save(table, 'myTable.csv')
   }
 }
 
@@ -89,36 +85,22 @@ function mouseWheel(event) {
     // timeLine.upperLimit -= zoom;
     // timeLine.lowerLimit += zoom;
   }
-  //timeLine.upperLimit -=
 }
 function addRowsFromTimeline(){
-  table.events = {};
+  // table.events = {};
+
   for (var i = 0; i < timeLine.events.length; i++){
+    var newJsonObj= {};
     e = timeLine.events[i];
     var newEventName =  ""+e.name.slice(2,e.name.length);
-    table.events[newEventName] = e.date;
+    newJsonObj.name = newEventName;
+    newJsonObj.value = e.date;
+    arrayOfJsonObjects.push(newJsonObj);
+    //table.append or push({"Name":"})
     //table.addRow(new p5.TableRow(e.date +","+e.name));
   }
-
-  //print(table);
-  //table.addRow();
-  //saveTable(table,'myTable');
-  //saveJSON(json,'myTable.json');
-  save(table, 'myTable.json');
+  save(arrayOfJsonObjects, 'myTable.json');
 }
-
-function printTable(){
-  //cycle through the table
-  //print(table.getRowCount());
-  print(table.getString(0,0));
-  // for (var r = 0; r < table.getRowCount(); r++){
-  //   for (var c = 0; c < table.getColumnCount(); c++) {
-  //     print(table.getString(r, c));
-  //     //table.addRow(new p5.TableRow(["1920,apple"],[","]));
-  //   }
-  // }
-}
-
 function createTestEvents(dates){
   result  = [];
   for (var i = 0; i < dates.length; i++){
@@ -126,7 +108,6 @@ function createTestEvents(dates){
   }
   return result;
 }
-
 
 function updateMinMax(){
   tempDates = []
@@ -159,4 +140,8 @@ function updateText(){
   timeLine.events.push(new Event(name,int(date)));
   updateMinMax();
   input.value("");
+}
+//HELPER FUNCTIONS
+function length(obj) {
+    return Object.keys(obj).length;
 }

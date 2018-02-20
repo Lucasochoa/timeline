@@ -1,0 +1,15 @@
+var arrayOfJsonObjects = [];
+var jsonObj = {};
+
+function setup(){
+
+}
+function draw(){
+
+}
+function saveJsonEventsAtTheEnd(){
+  for loop through array of josn objects{
+    table.push(arrayOfJsonObject[i]);
+  }
+
+}
