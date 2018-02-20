@@ -16,7 +16,7 @@ function Event(name,date){
 
     var x = map(this.date,min,max,screenStep*2,screenStep*(steps-2));
     this.x = x;
-    var y = 200; // will be based on clustering (fucking shit show)
+    var y = 120; // will be based on clustering (fucking shit show)
 
     drawTrace(x,y);
     drawTexts(x,y,this.date,this.name);

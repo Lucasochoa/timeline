@@ -1,10 +1,115 @@
-[{
-	"Name": "apple",
-	"Value": 1995
-}, {
-	"Name": "siteid",
-	"Value": 2001
-}, {
-	"Name": "sitename",
-	"Value": 1970
-}]
+[
+  {
+    "name": "ML Hype",
+    "value": 2018
+  },
+  {
+    "name": "ML Not Well Defined",
+    "value": 2019
+  },
+  {
+    "name": "ML Hardware 5x Better",
+    "value": 2022
+  },
+  {
+    "name": "ML becomes easy to implement",
+    "value": 2033
+  },
+  {
+    "name": "ML becomes everyday (.coms)",
+    "value": 2035
+  },
+  {
+    "name": "AI replaces Graphic Design",
+    "value": 2023
+  },
+  {
+    "name": "Mundane jobs become obsolete",
+    "value": 2035
+  },
+  {
+    "name": "Ai reaches Singularity",
+    "value": 2040
+  },
+  {
+    "name": "I Replaces Traditional Education",
+    "value": 2050
+  },
+  {
+    "name": "AI Becomes involved in Politics",
+    "value": 2060
+  },
+  {
+    "name": "Cross of govt <Private sentiment",
+    "value": 2030
+  },
+  {
+    "name": "Fully Private AI Funding",
+    "value": 2033
+  },
+  {
+    "name": "China Accomplishes Singularity",
+    "value": 2040
+  },
+  {
+    "name": "Militarized Singularity",
+    "value": 2045
+  },
+  {
+    "name": "China becomes Dominant political force",
+    "value": 2050
+  },
+  {
+    "name": "West < Asian Superpowers ",
+    "value": 2065
+  },  
+  {
+    "name": "Facial Recognition Starts",
+    "value": 2000
+  },
+  {
+    "name": "Gans Introduced",
+    "value": 2015
+  },
+  {
+    "name": "Now",
+    "value": 2018
+  },
+  {
+    "name": "626 Million CCTV in China",
+    "value": 2020
+  },
+  {
+    "name": "2 Billion 2g Users",
+    "value": 2023
+  },
+  {
+    "name": "Rising Middle class China",
+    "value": 2025
+  },
+  {
+    "name": "MR/VR push NLP Tech",
+    "value": 2027
+  },
+  {
+    "name": "31 Mega Cities in Asia",
+    "value": 2030
+  },
+  {
+    "name": "Japan dramatic improvement of NLP",
+    "value": 2034
+  },
+  {
+    "name": "Gans build other Gans",
+    "value": 2047
+  },
+  {
+    "name": "Brain UI (Regina Dugan)",
+    "value": 2060
+  },
+  {
+    "name": "Neuro Hardware",
+    "value": 2070
+  }
+
+]

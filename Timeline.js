@@ -3,7 +3,7 @@ function Timeline(eventList,lowerLimit,upperLimit){
   this.currentPos = 0;
   this.lowerLimit = lowerLimit;
   this.upperLimit = upperLimit;
-    
+
   this.draw = function(){
 
       screenSteps = (this.upperLimit - this.lowerLimit)/5 + 4; //amount of lines 14
@@ -11,7 +11,6 @@ function Timeline(eventList,lowerLimit,upperLimit){
       for (var i = 0; i < this.events.length; i++){
         this.events[i].draw(screenSteps,this.lowerLimit,this.upperLimit);
       }
-
 
       var lineHeight = 25;
       stroke(255);
