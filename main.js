@@ -9,7 +9,8 @@ var table;
 function preload() {
   myFont = loadFont('assets/GTAmericaMonoRegular.otf');
   textFont(myFont);
-  table = loadJSON('assets/myTable3.json');
+  table = null;
+  //table = loadJSON('assets/myTable3.json');
 }
 
 function setup() {
@@ -21,12 +22,15 @@ function setup() {
   timeLine = new Timeline(eventList,0,0);
   scanner = new ScanMarker(30);
 
-  setupImportedJSON();
+  if (table != null){
+      setupImportedJSON();
+  }
+
 }
 
 function draw() {
   background(30);
-  scanner.draw(windowWidth);
+  //scanner.draw(windowWidth);
   timeLine.draw(windowWidth,windowHeight);
 }
 
