@@ -10,7 +10,7 @@ function preload() {
   myFont = loadFont('assets/GTAmericaMonoRegular.otf');
   textFont(myFont);
   table = null;
-  table = loadJSON('assets/maayan.json');
+  //table = loadJSON('assets/marisa.json');
 }
 
 function setup() {
